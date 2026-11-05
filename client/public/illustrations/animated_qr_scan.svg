@@ -1,0 +1,67 @@
+<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="scanBeam" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ef4444" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Frame Background -->
+  <rect x="15" y="15" width="130" height="130" rx="16" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+  
+  <!-- QR Code Mockup inside -->
+  <g fill="#94a3b8" opacity="0.65">
+    <rect x="35" y="35" width="24" height="24" rx="4"/>
+    <rect x="39" y="39" width="16" height="16" rx="2" fill="#0f172a"/>
+    <rect x="43" y="43" width="8" height="8" rx="1"/>
+
+    <rect x="101" y="35" width="24" height="24" rx="4"/>
+    <rect x="105" y="39" width="16" height="16" rx="2" fill="#0f172a"/>
+    <rect x="109" y="43" width="8" height="8" rx="1"/>
+
+    <rect x="35" y="101" width="24" height="24" rx="4"/>
+    <rect x="39" y="105" width="16" height="16" rx="2" fill="#0f172a"/>
+    <rect x="43" y="109" width="8" height="8" rx="1"/>
+
+    <rect x="68" y="40" width="8" height="8" rx="2"/>
+    <rect x="84" y="40" width="8" height="16" rx="2"/>
+    <rect x="68" y="56" width="16" height="8" rx="2"/>
+    <rect x="68" y="72" width="24" height="16" rx="2"/>
+    <rect x="40" y="72" width="16" height="16" rx="2"/>
+    <rect x="104" y="72" width="16" height="20" rx="2"/>
+    <rect x="68" y="96" width="16" height="24" rx="2"/>
+    <rect x="92" y="100" width="28" height="20" rx="2"/>
+  </g>
+
+  <!-- Corner Viewfinders with pulse -->
+  <g stroke="#10b981" stroke-width="3.5" stroke-linecap="round" fill="none">
+    <path d="M28 42 L28 28 L42 28"/>
+    <path d="M132 42 L132 28 L118 28"/>
+    <path d="M28 118 L28 132 L42 132"/>
+    <path d="M132 118 L132 132 L118 132"/>
+  </g>
+
+  <!-- Sweeping Laser Beam Animation -->
+  <rect x="25" y="25" width="110" height="18" fill="url(#scanBeam)">
+    <animate attributeName="y" values="25;117;25" dur="1.8s" repeatCount="indefinite" ease="easeInOut"/>
+  </rect>
+  <line x1="25" y1="34" x2="135" y2="34" stroke="#ef4444" stroke-width="2.5" filter="url(#glow)">
+    <animate attributeName="y1" values="34;126;34" dur="1.8s" repeatCount="indefinite" ease="easeInOut"/>
+    <animate attributeName="y2" values="34;126;34" dur="1.8s" repeatCount="indefinite" ease="easeInOut"/>
+  </line>
+
+  <!-- Scanning Indicator Pill -->
+  <g transform="translate(48, 138)">
+    <rect x="0" y="0" width="64" height="16" rx="8" fill="#10b981"/>
+    <text x="32" y="11" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="900" font-family="system-ui">LIVE SCAN</text>
+  </g>
+</svg>
+

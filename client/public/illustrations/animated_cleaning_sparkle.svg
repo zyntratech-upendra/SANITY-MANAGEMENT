@@ -1,0 +1,54 @@
+<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="sparkleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Pulsing Backdrop Circle -->
+  <circle cx="80" cy="80" r="60" fill="url(#sparkleGlow)">
+    <animate attributeName="r" values="50;68;50" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Central Shield -->
+  <circle cx="80" cy="80" r="42" fill="#059669" stroke="#ffffff" stroke-width="4"/>
+  <circle cx="80" cy="80" r="34" fill="#10b981"/>
+
+  <!-- Checkmark -->
+  <path d="M66 80 L76 90 L96 70" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Rotating Sparkle Star 1 -->
+  <g transform="translate(120, 40)">
+    <path d="M0 -14 L3 -3 L14 0 L3 3 L0 14 L-3 3 L-14 0 L-3 -3 Z" fill="#f59e0b">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Rotating Sparkle Star 2 -->
+  <g transform="translate(35, 115)">
+    <path d="M0 -10 L2 -2 L10 0 L2 2 L0 10 L-2 2 L-10 0 L-2 -2 Z" fill="#f59e0b">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Floating Rising Bubbles -->
+  <circle cx="45" cy="50" r="6" fill="#38bdf8" opacity="0.7">
+    <animate attributeName="cy" values="55;35;55" dur="2.2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="120" cy="110" r="5" fill="#38bdf8" opacity="0.6">
+    <animate attributeName="cy" values="120;95;120" dur="2.6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;0.1;0.7" dur="2.6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- 100% CLEAN Text Badge -->
+  <g transform="translate(38, 134)">
+    <rect x="0" y="0" width="84" height="20" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+    <text x="42" y="14" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="900" font-family="system-ui">100% SANITIZED</text>
+  </g>
+</svg>
+

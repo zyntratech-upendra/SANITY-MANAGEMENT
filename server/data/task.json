@@ -1,0 +1,174 @@
+[
+  {
+    "_id": "65f7765477421586b1738",
+    "status": "PENDING",
+    "priority": "URGENT",
+    "durationMinutes": 0,
+    "checklist": [
+      {
+        "taskItem": "Inspect water supply valve and motor",
+        "completed": false
+      },
+      {
+        "taskItem": "Deep antibacterial scrub of floors & stalls",
+        "completed": false
+      },
+      {
+        "taskItem": "Refill liquid soap and sanitizer dispensers",
+        "completed": false
+      },
+      {
+        "taskItem": "Deodorize ventilation shafts",
+        "completed": false
+      }
+    ],
+    "taskId": "TSK-5011",
+    "facilityId": "65fb20e443c2f322a9e41",
+    "facilityCode": "TOILET-104",
+    "facilityName": "Grand Municipal Market Public Toilet",
+    "title": "[Citizen Alert TKT-10824] Urgent Water Restoration & Sanitization",
+    "type": "PLUMBING_WATER",
+    "source": "CITIZEN_COMPLAINT",
+    "complaintId": "65f0e6cc6db13e83ca476",
+    "assignedStaff": {
+      "staffId": "STF-04",
+      "name": "Deepa Verma",
+      "phone": "+91 97110 99887"
+    },
+    "notes": "Priority alert triggered by visitor QR scan feedback.",
+    "createdAt": "2026-11-03T14:20:56.035Z",
+    "updatedAt": "2026-11-03T14:20:56.035Z"
+  },
+  {
+    "_id": "65f6bf7ec0b773337e7a7",
+    "status": "COMPLETED",
+    "priority": "MEDIUM",
+    "durationMinutes": 16,
+    "checklist": [
+      {
+        "taskItem": "Floor mop & disinfectant rinse",
+        "completed": true
+      },
+      {
+        "taskItem": "Mirror & surface wipe",
+        "completed": true
+      },
+      {
+        "taskItem": "Handwash bottle top-up",
+        "completed": true
+      },
+      {
+        "taskItem": "Verify water pressure",
+        "completed": true
+      }
+    ],
+    "taskId": "TSK-4980",
+    "facilityId": "65fe83f7333de7d4e81fe",
+    "facilityCode": "TOILET-101",
+    "facilityName": "Central Plaza & Metro Gateway Complex",
+    "title": "Morning Routine Sanitation & Inspection",
+    "type": "CLEANING",
+    "source": "ROUTINE_SCHEDULE",
+    "assignedStaff": {
+      "staffId": "STF-01",
+      "name": "Rajesh Kumar",
+      "phone": "+91 98765 43210"
+    },
+    "startedAt": "2026-11-03T13:20:56.040Z",
+    "completedAt": "2026-11-03T13:36:56.040Z",
+    "notes": "Facility in pristine condition.",
+    "createdAt": "2026-11-03T14:20:56.040Z",
+    "updatedAt": "2026-11-03T14:20:56.040Z"
+  },
+  {
+    "_id": "65f7804147306370270a3",
+    "status": "IN_PROGRESS",
+    "priority": "URGENT",
+    "durationMinutes": 0,
+    "checklist": [
+      {
+        "taskItem": "Inspect stall condition & reported issues",
+        "completed": false
+      },
+      {
+        "taskItem": "Perform sanitary scrub and disinfection",
+        "completed": false
+      },
+      {
+        "taskItem": "Replenish consumables (Soap, Paper, Sanitizer)",
+        "completed": false
+      },
+      {
+        "taskItem": "Verify water supply pressure & flush mechanism",
+        "completed": false
+      },
+      {
+        "taskItem": "Log air freshening / odor clearance check",
+        "completed": false
+      }
+    ],
+    "taskId": "TSK-3474",
+    "facilityId": "65fe83f7333de7d4e81fe",
+    "facilityCode": "TOILET-101",
+    "facilityName": "Central Plaza & Metro Gateway Complex",
+    "title": "[Citizen Alert TKT-685946] NO_WATER, FOUL_ODOR",
+    "type": "PLUMBING_WATER",
+    "source": "CITIZEN_COMPLAINT",
+    "complaintId": "65f6238e5eb07f32786c1",
+    "assignedStaff": {
+      "staffId": "STF-01",
+      "name": "Rajesh Kumar",
+      "phone": "+91 98765 43210"
+    },
+    "notes": "Visitor feedback: \"Water pump seems tripped, bad odor near entrance.\"",
+    "createdAt": "2026-11-03T14:34:37.348Z",
+    "updatedAt": "2026-11-03T14:34:37.490Z",
+    "startedAt": "2026-11-03T14:34:37.490Z"
+  },
+  {
+    "_id": "65fbaba70bcd5b1452ac2",
+    "status": "COMPLETED",
+    "priority": "URGENT",
+    "durationMinutes": 1,
+    "checklist": [
+      {
+        "taskItem": "Inspect stall condition & reported issues",
+        "completed": true
+      },
+      {
+        "taskItem": "Perform sanitary scrub and disinfection",
+        "completed": true
+      },
+      {
+        "taskItem": "Replenish consumables (Soap, Paper, Sanitizer)",
+        "completed": true
+      },
+      {
+        "taskItem": "Verify water supply pressure & flush mechanism",
+        "completed": true
+      },
+      {
+        "taskItem": "Log air freshening / odor clearance check",
+        "completed": true
+      }
+    ],
+    "taskId": "TSK-9803",
+    "facilityId": "65fe83f7333de7d4e81fe",
+    "facilityCode": "TOILET-101",
+    "facilityName": "Central Plaza & Metro Gateway Complex",
+    "title": "[Citizen Alert TKT-755110] NO_WATER, DIRTY_FLOOR_STALLS",
+    "type": "PLUMBING_WATER",
+    "source": "CITIZEN_COMPLAINT",
+    "complaintId": "65f3df1253e1ec11b32cf",
+    "assignedStaff": {
+      "staffId": "STF-01",
+      "name": "Rajesh Kumar",
+      "phone": "+91 98765 43210"
+    },
+    "notes": "Visitor feedback: \"Immediate cleaning required.\" | Staff Completion: Sanitation scrub complete, water and soap topped up.",
+    "createdAt": "2026-11-03T14:35:28.174Z",
+    "updatedAt": "2026-11-03T14:35:28.322Z",
+    "startedAt": "2026-11-03T14:35:28.276Z",
+    "completedAt": "2026-11-03T14:35:28.322Z"
+  }
+]

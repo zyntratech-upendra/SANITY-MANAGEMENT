@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" />
+      <stop offset="100%" stop-color="#d1fae5" />
+    </linearGradient>
+    <linearGradient id="bldgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#065f46" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a7f3d0" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.6" />
+    </linearGradient>
+    <filter id="dropShad" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#064e3b" flood-opacity="0.15" />
+    </filter>
+    <filter id="cardShad" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <!-- Soft Ambient Backdrop -->
+  <rect x="20" y="20" width="680" height="460" rx="32" fill="url(#skyGrad)" opacity="0.6" />
+
+  <!-- Ground Plane -->
+  <path d="M 40 420 Q 360 405 680 420 L 680 460 A 32 32 0 0 1 648 480 L 72 480 A 32 32 0 0 1 40 460 Z" fill="#10b981" opacity="0.15" />
+  <line x1="50" y1="420" x2="670" y2="420" stroke="#059669" stroke-width="3" stroke-dasharray="6 6" opacity="0.4" />
+
+  <!-- MODERN PUBLIC RESTROOM COMPLEX -->
+  <g filter="url(#dropShad)">
+    <!-- Main Pavilion Structure -->
+    <rect x="180" y="140" width="360" height="280" rx="20" fill="#ffffff" stroke="#e2e8f0" stroke-width="3" />
+    
+    <!-- Top Modern Canopy / Overhang -->
+    <rect x="160" y="125" width="400" height="28" rx="14" fill="url(#bldgGrad)" />
+    <rect x="170" y="145" width="380" height="8" fill="#047857" opacity="0.3" />
+
+    <!-- Restroom Facility Title Board -->
+    <rect x="240" y="160" width="240" height="32" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+    <circle cx="258" cy="176" r="7" fill="#10b981" />
+    <path d="M 255 176 L 257 178 L 261 174" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" />
+    <text x="272" y="181" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#0f172a" letter-spacing="0.5">SMART RESTROOM #04</text>
+
+    <!-- Restroom Doors Section -->
+    <!-- Door 1: Gents -->
+    <rect x="210" y="210" width="80" height="180" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2" />
+    <rect x="220" y="225" width="60" height="60" rx="8" fill="#e2e8f0" />
+    <!-- Male Symbol -->
+    <circle cx="250" cy="245" r="8" fill="#0284c7" />
+    <path d="M 244 260 L 256 260 L 254 275 L 246 275 Z" fill="#0284c7" />
+    <rect x="280" y="300" width="4" height="24" rx="2" fill="#94a3b8" />
+
+    <!-- Door 2: Ladies -->
+    <rect x="310" y="210" width="80" height="180" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2" />
+    <rect x="320" y="225" width="60" height="60" rx="8" fill="#e2e8f0" />
+    <!-- Female Symbol -->
+    <circle cx="350" cy="245" r="8" fill="#ec4899" />
+    <path d="M 342 275 L 358 275 L 354 258 L 346 258 Z" fill="#ec4899" />
+    <rect x="380" y="300" width="4" height="24" rx="2" fill="#94a3b8" />
+
+    <!-- Door 3: Accessible -->
+    <rect x="410" y="210" width="80" height="180" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2" />
+    <rect x="420" y="225" width="60" height="60" rx="8" fill="#e2e8f0" />
+    <!-- Wheelchair Symbol -->
+    <circle cx="450" cy="243" r="6" fill="#8b5cf6" />
+    <path d="M 445 252 H 455 V 264 H 445 Z M 455 264 H 462" stroke="#8b5cf6" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <rect x="480" y="300" width="4" height="24" rx="2" fill="#94a3b8" />
+
+    <!-- Base Ramp / Entrance Steps -->
+    <rect x="170" y="390" width="380" height="30" rx="6" fill="#e2e8f0" />
+    <rect x="190" y="405" width="340" height="15" rx="4" fill="#cbd5e1" />
+
+    <!-- IoT Odor &amp; Water Telemetry Mast on Roof -->
+    <rect x="355" y="80" width="10" height="45" rx="2" fill="#475569" />
+    <rect x="345" y="70" width="30" height="20" rx="6" fill="#047857" />
+    <!-- Wifi Antenna Signal Waves -->
+    <path d="M 340 60 A 25 25 0 0 1 380 60" stroke="#10b981" stroke-width="3" fill="none" stroke-linecap="round" />
+    <path d="M 332 50 A 35 35 0 0 1 388 50" stroke="#10b981" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-opacity="0.7" />
+    <path d="M 324 40 A 45 45 0 0 1 396 40" stroke="#10b981" stroke-width="2" fill="none" stroke-linecap="round" stroke-opacity="0.4" />
+  </g>
+
+  <!-- CITIZEN QR CODE PLACARD POLE -->
+  <g filter="url(#cardShad)">
+    <rect x="110" y="220" width="6" height="200" fill="#64748b" />
+    <!-- Placard Board -->
+    <rect x="65" y="200" width="96" height="110" rx="12" fill="#ffffff" stroke="#10b981" stroke-width="2.5" />
+    <rect x="75" y="210" width="76" height="20" rx="6" fill="#047857" />
+    <text x="83" y="224" font-family="system-ui, sans-serif" font-size="9" font-weight="800" fill="#ffffff">SCAN TO RATE</text>
+    
+    <!-- Mini QR Code Vector -->
+    <rect x="82" y="238" width="62" height="62" fill="#0f172a" rx="4" />
+    <rect x="86" y="242" width="20" height="20" fill="#ffffff" />
+    <rect x="90" y="246" width="12" height="12" fill="#0f172a" />
+    <rect x="120" y="242" width="20" height="20" fill="#ffffff" />
+    <rect x="124" y="246" width="12" height="12" fill="#0f172a" />
+    <rect x="86" y="276" width="20" height="20" fill="#ffffff" />
+    <rect x="90" y="280" width="12" height="12" fill="#0f172a" />
+    <rect x="116" y="276" width="10" height="10" fill="#ffffff" />
+    <rect x="128" y="286" width="12" height="10" fill="#ffffff" />
+  </g>
+
+  <!-- SANITATION SPECIALIST / WORKER CHARACTER (RIGHT) -->
+  <g transform="translate(540, 240)">
+    <!-- Shadow -->
+    <ellipse cx="40" cy="180" rx="35" ry="10" fill="#0f172a" opacity="0.2" />
+    
+    <!-- Legs -->
+    <rect x="25" y="105" width="12" height="75" rx="6" fill="#1e293b" />
+    <rect x="43" y="105" width="12" height="75" rx="6" fill="#1e293b" />
+    <!-- Boots -->
+    <rect x="21" y="172" width="18" height="10" rx="4" fill="#047857" />
+    <rect x="41" y="172" width="18" height="10" rx="4" fill="#047857" />
+
+    <!-- Torso with High-Vis Safety Vest -->
+    <rect x="22" y="45" width="36" height="65" rx="8" fill="#047857" />
+    <!-- Neon reflective stripes -->
+    <rect x="22" y="60" width="36" height="8" fill="#fbbf24" />
+    <rect x="22" y="80" width="36" height="8" fill="#fbbf24" />
+    <line x1="30" y1="45" x2="30" y2="110" stroke="#fbbf24" stroke-width="4" />
+    <line x1="50" y1="45" x2="50" y2="110" stroke="#fbbf24" stroke-width="4" />
+
+    <!-- Head &amp; Safety Cap -->
+    <circle cx="40" cy="28" r="16" fill="#fbcfe8" />
+    <!-- Green Cap -->
+    <path d="M 22 26 C 22 14 58 14 58 26 Z" fill="#065f46" />
+    <rect x="20" y="24" width="44" height="5" rx="2.5" fill="#047857" />
+
+    <!-- Cleaning Mop Tool -->
+    <line x1="10" y1="30" x2="-10" y2="180" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" />
+    <rect x="-25" y="176" width="30" height="8" rx="3" fill="#0284c7" />
+    <path d="M -25 184 L -23 192 M -18 184 L -16 192 M -12 184 L -10 192 M -5 184 L -3 192 M 0 184 L 2 192" stroke="#38bdf8" stroke-width="2.5" />
+
+    <!-- Right Arm giving thumbs up -->
+    <path d="M 55 55 L 75 70 L 80 62" stroke="#047857" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <circle cx="80" cy="60" r="6" fill="#fbcfe8" />
+  </g>
+
+  <!-- FLOATING SMART TELEMETRY METRIC PILLS -->
+  <!-- Pill 1: Odor Index -->
+  <g filter="url(#cardShad)" transform="translate(50, 90)">
+    <rect width="150" height="44" rx="14" fill="#ffffff" stroke="#10b981" stroke-width="1.5" />
+    <circle cx="24" cy="22" r="12" fill="#d1fae5" />
+    <circle cx="24" cy="22" r="5" fill="#059669" />
+    <text x="44" y="18" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#059669" letter-spacing="0.5">ODOR TELEMETRY</text>
+    <text x="44" y="32" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#0f172a">8 PPM • Fresh Air</text>
+  </g>
+
+  <!-- Pill 2: Water Supply -->
+  <g filter="url(#cardShad)" transform="translate(520, 80)">
+    <rect width="155" height="44" rx="14" fill="#ffffff" stroke="#0284c7" stroke-width="1.5" />
+    <circle cx="24" cy="22" r="12" fill="#e0f2fe" />
+    <path d="M 24 14 Q 28 22 28 25 A 4 4 0 0 1 20 25 Q 20 22 24 14 Z" fill="#0284c7" />
+    <text x="44" y="18" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#0284c7" letter-spacing="0.5">WATER RESERVE</text>
+    <text x="44" y="32" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#0f172a">96% • Full Pressure</text>
+  </g>
+
+  <!-- Sparkles -->
+  <g fill="#fbbf24">
+    <path d="M 190 200 L 193 208 L 201 211 L 193 214 L 190 222 L 187 214 L 179 211 L 187 208 Z" opacity="0.8" />
+    <path d="M 495 190 L 497 195 L 502 197 L 497 199 L 495 204 L 493 199 L 488 197 L 493 195 Z" opacity="0.8" />
+    <path d="M 380 395 L 382 399 L 386 401 L 382 403 L 380 407 L 378 403 L 374 401 L 378 399 Z" opacity="0.9" />
+  </g>
+</svg>

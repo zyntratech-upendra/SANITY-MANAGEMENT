@@ -1,0 +1,70 @@
+[
+  {
+    "_id": "65f0e6cc6db13e83ca476",
+    "status": "ASSIGNED",
+    "priority": "URGENT",
+    "issues": [
+      "NO_WATER",
+      "DIRTY_FLOOR_STALLS",
+      "NO_SOAP_SANITIZER"
+    ],
+    "ticketId": "TKT-10824",
+    "facilityId": "65fb20e443c2f322a9e41",
+    "facilityCode": "TOILET-104",
+    "facilityName": "Grand Municipal Market Public Toilet",
+    "rating": 1,
+    "description": "Taps have completely dried up, floor needs urgent scrub down and liquid soap is empty.",
+    "reporterName": "Vikram Malhotra",
+    "reporterPhone": "+91 98101 23456",
+    "assignedStaffName": "Deepa Verma",
+    "createdAt": "2026-11-03T14:20:56.034Z",
+    "updatedAt": "2026-11-03T14:20:56.039Z",
+    "generatedTaskId": "65f7765477421586b1738"
+  },
+  {
+    "_id": "65f6238e5eb07f32786c1",
+    "status": "ASSIGNED",
+    "priority": "URGENT",
+    "issues": [
+      "NO_WATER",
+      "FOUL_ODOR"
+    ],
+    "ticketId": "TKT-685946",
+    "facilityId": "65fe83f7333de7d4e81fe",
+    "facilityCode": "TOILET-101",
+    "facilityName": "Central Plaza & Metro Gateway Complex",
+    "rating": 1,
+    "description": "Water pump seems tripped, bad odor near entrance.",
+    "imageUrl": "",
+    "reporterName": "Aarav Sharma",
+    "reporterPhone": "+91 99887 66554",
+    "assignedStaffName": "Rajesh Kumar",
+    "createdAt": "2026-11-03T14:34:37.346Z",
+    "updatedAt": "2026-11-03T14:34:37.349Z",
+    "generatedTaskId": "65f7804147306370270a3"
+  },
+  {
+    "_id": "65f3df1253e1ec11b32cf",
+    "status": "RESOLVED",
+    "priority": "URGENT",
+    "issues": [
+      "NO_WATER",
+      "DIRTY_FLOOR_STALLS"
+    ],
+    "ticketId": "TKT-755110",
+    "facilityId": "65fe83f7333de7d4e81fe",
+    "facilityCode": "TOILET-101",
+    "facilityName": "Central Plaza & Metro Gateway Complex",
+    "rating": 1,
+    "description": "Immediate cleaning required.",
+    "imageUrl": "",
+    "reporterName": "Aarav Sharma",
+    "reporterPhone": "+91 99887 66554",
+    "assignedStaffName": "Rajesh Kumar",
+    "createdAt": "2026-11-03T14:35:28.169Z",
+    "updatedAt": "2026-11-03T14:35:28.330Z",
+    "generatedTaskId": "65fbaba70bcd5b1452ac2",
+    "resolvedAt": "2026-11-03T14:35:28.322Z",
+    "resolutionNotes": "Resolved by staff Rajesh Kumar (Duration: 1 mins)."
+  }
+]

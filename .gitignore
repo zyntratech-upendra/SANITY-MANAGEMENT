@@ -1,0 +1,69 @@
+# ==========================================
+# SANITY MANAGEMENT - ROOT .GITIGNORE
+# ==========================================
+
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment Variables & Secrets (NEVER COMMIT SECRETS)
+.env
+.env.*
+*.env
+*/.env
+*/.env.*
+!.env.example
+!*/.env.example
+
+# Production Builds
+dist/
+dist-ssr/
+build/
+*/dist/
+*/build/
+
+# Logs & Debugging
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data & locks
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE & Code Editor Configs
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.sublime-workspace
+*.sublime-project
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Caches
+.turbo/
+.cache/
+.eslintcache
+*.tmp
+*.temp
+

@@ -1,0 +1,30 @@
+# ==========================================
+# SANITY MANAGEMENT - SERVER .GITIGNORE
+# ==========================================
+
+# Dependencies
+node_modules/
+
+# Environment Variables & Secrets
+.env
+.env.*
+*.env
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Runtime data & locks
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Operating System & Editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+

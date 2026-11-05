@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#grad)" />
+  <!-- Restroom / Shield Emblem in white -->
+  <circle cx="24" cy="20" r="5" fill="#ffffff" />
+  <path d="M19 28 C19 26, 29 26, 29 28 L30 42 L26 42 L26 52 L22 52 L22 42 L18 42 Z" fill="#ffffff" />
+  
+  <circle cx="42" cy="20" r="5" fill="#ffffff" />
+  <path d="M37 28 C37 26, 47 26, 47 28 L48 38 L44 38 L46 52 L42 52 L40 40 L38 52 L34 52 L36 38 L32 38 Z" fill="#ffffff" />
+
+  <!-- Clean checkmark pill badge -->
+  <circle cx="50" cy="50" r="9" fill="#10b981" stroke="#ffffff" stroke-width="2" />
+  <path d="M46 50 L49 53 L55 46" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

@@ -1,0 +1,59 @@
+[
+  {
+    "_id": "65f5173743b5df8e959ec",
+    "status": "ON_DUTY",
+    "completedTasksCount": 19,
+    "avgCleaningDurationMins": 15,
+    "rating": 4.9,
+    "staffId": "STF-01",
+    "name": "Rajesh Kumar",
+    "role": "Sanitation Specialist",
+    "phone": "+91 98765 43210",
+    "zone": "Central Ward",
+    "createdAt": "2026-11-03T14:20:55.824Z",
+    "updatedAt": "2026-11-03T14:35:28.331Z",
+    "activeTaskId": ""
+  },
+  {
+    "_id": "65f32cdb8eb41db585841",
+    "status": "ON_DUTY",
+    "completedTasksCount": 24,
+    "avgCleaningDurationMins": 14,
+    "rating": 4.8,
+    "staffId": "STF-02",
+    "name": "Sunita Devi",
+    "role": "Field Supervisor",
+    "phone": "+91 98112 34567",
+    "zone": "North Ward",
+    "createdAt": "2026-11-03T14:20:55.824Z",
+    "updatedAt": "2026-11-03T14:20:55.824Z"
+  },
+  {
+    "_id": "65f1983c47eeb87a14435",
+    "status": "ON_DUTY",
+    "completedTasksCount": 15,
+    "avgCleaningDurationMins": 22,
+    "rating": 4.7,
+    "staffId": "STF-03",
+    "name": "Amit Patel",
+    "role": "Plumbing & Water Technician",
+    "phone": "+91 98991 22334",
+    "zone": "South Ward",
+    "createdAt": "2026-11-03T14:20:55.824Z",
+    "updatedAt": "2026-11-03T14:20:55.824Z"
+  },
+  {
+    "_id": "65f92a2c39bc93a648310",
+    "status": "ON_DUTY",
+    "completedTasksCount": 19,
+    "avgCleaningDurationMins": 15,
+    "rating": 4.9,
+    "staffId": "STF-04",
+    "name": "Deepa Verma",
+    "role": "Rapid Response Sanitizer",
+    "phone": "+91 97110 99887",
+    "zone": "East Ward",
+    "createdAt": "2026-11-03T14:20:55.824Z",
+    "updatedAt": "2026-11-03T14:20:55.824Z"
+  }
+]
