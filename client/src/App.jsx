@@ -5,7 +5,6 @@ import { SanitationProvider, useSanitation } from './context/SanitationContext';
 import { LocationProvider, useLocationCoords } from './context/LocationContext';
 
 import RoleBasedNavbar from './components/RoleBasedNavbar';
-import MobileBottomBar from './components/MobileBottomBar';
 import SplashScreen from './components/SplashScreen';
 import EmblemOfIndia from './components/gov/EmblemOfIndia';
 import SwachhBharatLogo from './components/gov/SwachhBharatLogo';
@@ -16,6 +15,24 @@ import QRCodeModal from './components/QRCodeModal';
 
 import { ShieldAlert, AlertTriangle, CheckCircle2, X } from 'lucide-react';
 import { FaLocationCrosshairs, FaSatellite, FaShieldHalved } from 'react-icons/fa6';
+
+// Auto Scroll-To-Top on Route Navigation
+function ScrollToTop() {
+  const { pathname, search } = useLocation();
+
+  useEffect(() => {
+    // Force immediate scroll to top of viewport across all browsers
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    if (document.documentElement) {
+      document.documentElement.scrollTop = 0;
+    }
+    if (document.body) {
+      document.body.scrollTop = 0;
+    }
+  }, [pathname, search]);
+
+  return null;
+}
 
 function AppLayout() {
   const {
@@ -64,6 +81,9 @@ function AppLayout() {
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-800 flex flex-col font-sans selection:bg-emerald-600 selection:text-white">
+      {/* Auto Scroll-To-Top on Navigation */}
+      <ScrollToTop />
+
       {/* Animated Flash / Splash Screen */}
       {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
 
@@ -106,12 +126,9 @@ function AppLayout() {
       )}
 
       {/* Main Separate Dashboard Views via AppRoutes */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-6 pb-28 md:pb-8">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-6 pb-8">
         <AppRoutes />
       </main>
-
-      {/* Mobile Bottom Navigation Bar (Visible only on mobile devices) */}
-      <MobileBottomBar />
 
       {/* Modal: Register New Facility (Step 1 & 2) */}
       {isRegisterOpen && (
@@ -131,7 +148,7 @@ function AppLayout() {
       )}
 
       {/* Redesigned Modern Civic Footer */}
-      <footer className="mt-auto bg-slate-950 text-slate-300 border-t border-slate-800/80 select-none pb-20 md:pb-0">
+      <footer className="mt-auto bg-slate-950 text-slate-300 border-t border-slate-800/80 select-none">
         {/* Subtle Top Gradient Accent Line */}
         <div className="h-1 w-full bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-600" />
 

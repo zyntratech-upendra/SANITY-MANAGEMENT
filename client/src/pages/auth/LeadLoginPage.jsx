@@ -91,13 +91,25 @@ export default function LeadLoginPage() {
           </div>
         </div>
 
-        {/* Official Access Notice */}
-        <div className="p-4 bg-blue-50/70 border-b border-blue-100 flex items-start gap-3 text-xs sm:text-sm">
-          <FaShieldHalved className="w-4 h-4 text-blue-700 shrink-0 mt-0.5" />
-          <div>
-            <span className="block font-bold text-blue-950 text-xs">Municipal Officer Access:</span>
-            <span className="text-blue-800 text-xs font-medium">Log in with the official credentials created and assigned to you by the Municipal Commissioner Admin.</span>
+        {/* Official Access Notice & Demo Fill */}
+        <div className="p-4 bg-blue-50/70 border-b border-blue-100 flex items-center justify-between gap-3 text-xs">
+          <div className="flex items-start gap-2.5">
+            <FaShieldHalved className="w-4 h-4 text-blue-700 shrink-0 mt-0.5" />
+            <div>
+              <span className="block font-bold text-blue-950 text-xs">Municipal Officer Access:</span>
+              <span className="text-blue-800 font-mono text-[11px] font-bold">saipavan@gmail.com / lead123</span>
+            </div>
           </div>
+          <button
+            type="button"
+            onClick={() => {
+              setEmail('saipavan@gmail.com');
+              setPassword('lead123');
+            }}
+            className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold text-xs rounded-xl shadow-xs transition-all cursor-pointer whitespace-nowrap shrink-0"
+          >
+            Auto Fill
+          </button>
         </div>
 
         {/* Login Form */}

@@ -88,7 +88,7 @@ export default function LeadDashboardPage() {
       setStatusMessage({ type: 'success', text: `Field Sanitation Worker "${workerForm.name}" created successfully.` });
       setWorkerForm({ name: '', email: '', password: '', phone: '', ward: user?.ward || 'Central Ward', allottedFacilities: [] });
       fetchWorkers();
-      fetchFacilities();
+      if (typeof fetchFacilities === 'function') fetchFacilities();
       setActiveTab('workers');
     } catch (err) {
       setStatusMessage({ type: 'error', text: err.message || 'Worker creation failed' });
@@ -108,7 +108,7 @@ export default function LeadDashboardPage() {
 
       setStatusMessage({ type: 'success', text: 'Toilet center allotted to sanitation worker.' });
       fetchWorkers();
-      fetchFacilities();
+      if (typeof fetchFacilities === 'function') fetchFacilities();
     } catch (err) {
       setStatusMessage({ type: 'error', text: err.message || 'Allotment failed' });
     }

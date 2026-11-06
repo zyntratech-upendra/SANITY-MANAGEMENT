@@ -122,7 +122,7 @@ export default function CitizenDashboardPage() {
       setDescription('');
       setSelectedIssues([]);
       fetchMyComplaints();
-      fetchFacilities();
+      if (typeof fetchFacilities === 'function') fetchFacilities();
     } catch (err) {
       alert(err.message || 'Failed to submit report');
     } finally {

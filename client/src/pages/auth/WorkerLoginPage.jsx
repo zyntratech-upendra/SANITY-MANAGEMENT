@@ -91,13 +91,25 @@ export default function WorkerLoginPage() {
           </div>
         </div>
 
-        {/* Official Field Staff Notice */}
-        <div className="p-4 bg-amber-50/70 border-b border-amber-100 flex items-start gap-3 text-xs sm:text-sm">
-          <FaClock className="w-4 h-4 text-amber-800 shrink-0 mt-0.5" />
-          <div>
-            <span className="block font-bold text-amber-950 text-xs">Field Specialist Access:</span>
-            <span className="text-amber-900 text-xs font-medium">Log in with the duty credentials provided by your Zonal Ward Lead or Municipal Admin.</span>
+        {/* Official Field Staff Notice & Demo Fill */}
+        <div className="p-4 bg-amber-50/70 border-b border-amber-100 flex items-center justify-between gap-3 text-xs">
+          <div className="flex items-start gap-2.5">
+            <FaClock className="w-4 h-4 text-amber-800 shrink-0 mt-0.5" />
+            <div>
+              <span className="block font-bold text-amber-950 text-xs">Field Specialist Access:</span>
+              <span className="text-amber-800 font-mono text-[11px] font-bold">worker@gmail.com / worker123</span>
+            </div>
           </div>
+          <button
+            type="button"
+            onClick={() => {
+              setEmail('worker@gmail.com');
+              setPassword('worker123');
+            }}
+            className="px-3 py-1.5 bg-amber-600 hover:bg-amber-700 active:scale-95 text-white font-bold text-xs rounded-xl shadow-xs transition-all cursor-pointer whitespace-nowrap shrink-0"
+          >
+            Auto Fill
+          </button>
         </div>
 
         {/* Login Form */}

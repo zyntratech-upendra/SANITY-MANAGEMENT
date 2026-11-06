@@ -121,7 +121,7 @@ export default function AdminDashboardPage() {
 
       await api.createFacility(payload);
       setStatusMessage({ type: 'success', text: `Toilet Center "${centerForm.name}" registered successfully with QR code placard.` });
-      fetchFacilities();
+      if (typeof fetchFacilities === 'function') fetchFacilities();
       setActiveTab('centers');
     } catch (err) {
       setStatusMessage({ type: 'error', text: err.message || 'Failed to create center' });
@@ -143,15 +143,16 @@ export default function AdminDashboardPage() {
   };
 
   // Allot Facilities to Lead
-  const handleAllotFacilities = async (leadId) => {
+  const handleAllotFacilities = async (leadId, facilityIdsToAllot) => {
     try {
+      const ids = facilityIdsToAllot || selectedFacilityIds;
       await api.allotFacilities({
         targetUserId: leadId,
-        facilityIds: selectedFacilityIds,
+        facilityIds: ids,
       });
       setStatusMessage({ type: 'success', text: 'Toilet centers allotted successfully to Municipal Lead.' });
       fetchLeads();
-      fetchFacilities();
+      if (typeof fetchFacilities === 'function') fetchFacilities();
     } catch (err) {
       setStatusMessage({ type: 'error', text: err.message || 'Allotment failed' });
     }
@@ -506,7 +507,7 @@ export default function AdminDashboardPage() {
                       const existing = lead.allottedFacilities?.map((f) => f._id || f) || [];
                       const updated = existing.includes(val) ? existing : [...existing, val];
                       setSelectedFacilityIds(updated);
-                      handleAllotFacilities(lead._id);
+                      handleAllotFacilities(lead._id, updated);
                     }}
                     className="flex-1 px-3 py-1.5 bg-white border border-slate-300 rounded-xl text-xs text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     defaultValue=""

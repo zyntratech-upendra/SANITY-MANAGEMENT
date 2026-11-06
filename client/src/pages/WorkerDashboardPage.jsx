@@ -119,7 +119,7 @@ export default function WorkerDashboardPage() {
       setIsTimerRunning(true);
       setStatusMessage({ type: 'success', text: `Cleaning started for ${task.facilityName}. Timer running!` });
       fetchTasks();
-      fetchFacilities();
+      if (typeof fetchFacilities === 'function') fetchFacilities();
     } catch (err) {
       setStatusMessage({ type: 'error', text: err.message || 'Failed to start task' });
     } finally {
@@ -165,7 +165,7 @@ export default function WorkerDashboardPage() {
       setTimerSeconds(0);
       setCompletionNotes('');
       fetchTasks();
-      fetchFacilities();
+      if (typeof fetchFacilities === 'function') fetchFacilities();
     } catch (err) {
       setStatusMessage({ type: 'error', text: err.message || 'Failed to complete task' });
     } finally {
@@ -176,9 +176,9 @@ export default function WorkerDashboardPage() {
   const activeTask = tasks.find((t) => t._id === activeTaskId);
 
   return (
-    <div className="space-y-6 animate-in fade-in duration-300">
+    <div className="space-y-4 sm:space-y-6 animate-in fade-in duration-300">
       {/* Banner */}
-      <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-sm flex flex-wrap items-center justify-between gap-6 card-interactive relative overflow-hidden">
+      <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-7 border border-slate-200/90 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-4 sm:gap-6 card-interactive relative overflow-hidden">
         {/* Tricolor accent */}
         <div className="absolute top-0 left-0 right-0 h-1 flex">
           <div className="flex-1 bg-[#FF9933]" />
@@ -186,45 +186,45 @@ export default function WorkerDashboardPage() {
           <div className="flex-1 bg-[#138808]" />
         </div>
 
-        <div className="flex items-center gap-4">
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center shadow-lg shadow-amber-500/30 animate-float shrink-0">
-            <Wrench className="w-7 h-7" />
+        <div className="flex items-center gap-3 sm:gap-4">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center shadow-lg shadow-amber-500/30 animate-float shrink-0">
+            <Wrench className="w-6 h-6 sm:w-7 sm:h-7" />
           </div>
           <div>
-            <div className="flex items-center gap-2">
-              <span className="text-[11px] font-black uppercase tracking-wider text-amber-950 bg-amber-100 px-3 py-0.5 rounded-full border border-amber-200">
-                Sanity Management • Field Duty Ops
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+              <span className="text-[10px] sm:text-[11px] font-black uppercase tracking-wider text-amber-950 bg-amber-100 px-2.5 sm:px-3 py-0.5 rounded-full border border-amber-200 whitespace-nowrap">
+                Sanity Management • Field Duty
               </span>
-              <span className="text-xs text-slate-400 font-semibold">• Municipal Sanitation Crew</span>
+              <span className="text-[11px] text-slate-400 font-semibold">• Sanitation Crew</span>
             </div>
-            <h1 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">{user?.name || 'Sanitation Worker'}</h1>
+            <h1 className="text-lg sm:text-xl lg:text-2xl font-black text-slate-900 mt-1">{user?.name || 'Sanitation Worker'}</h1>
             <p className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5 max-w-md">
               Allotted public toilet pavilions, live cleaning stopwatch timer, and 5-point quality checklist.
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
-          <div className="hidden md:flex items-center gap-3">
-            <WorkerShiftGraphic className="h-24 sm:h-28 w-auto" />
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+          <div className="hidden xl:flex items-center gap-3">
+            <WorkerShiftGraphic className="h-20 lg:h-24 w-auto" />
             <img
               src="/illustrations/worker_dispatch.gif"
               alt="Worker Dispatch Active"
-              className="h-20 w-20 rounded-2xl border border-amber-200 shadow-sm object-cover hidden lg:block"
+              className="h-16 w-16 rounded-2xl border border-amber-200 shadow-sm object-cover"
             />
           </div>
 
-          {/* Quick Stats Pill */}
-          <div className="flex items-center gap-3">
-            <div className="px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-center">
-              <span className="block text-[10px] font-extrabold text-slate-500 uppercase tracking-wide">My Centers</span>
-              <span className="text-xl sm:text-2xl font-black text-slate-900">
+          {/* Quick Stats Pill - Responsive Full Width Grid on Mobile */}
+          <div className="grid grid-cols-2 sm:flex sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
+            <div className="px-3 sm:px-4 py-2 sm:py-2.5 bg-slate-50 border border-slate-200 rounded-xl sm:rounded-2xl text-center">
+              <span className="block text-[9px] sm:text-[10px] font-extrabold text-slate-500 uppercase tracking-wide">My Centers</span>
+              <span className="text-lg sm:text-xl lg:text-2xl font-black text-slate-900">
                 {assignedFacilities.length > 0 ? assignedFacilities.length : facilities.length}
               </span>
             </div>
-            <div className="px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-center">
-              <span className="block text-[10px] font-extrabold text-slate-500 uppercase tracking-wide">Pending Tasks</span>
-              <span className="text-xl sm:text-2xl font-black text-amber-700">
+            <div className="px-3 sm:px-4 py-2 sm:py-2.5 bg-slate-50 border border-slate-200 rounded-xl sm:rounded-2xl text-center">
+              <span className="block text-[9px] sm:text-[10px] font-extrabold text-slate-500 uppercase tracking-wide">Pending Tasks</span>
+              <span className="text-lg sm:text-xl lg:text-2xl font-black text-amber-700">
                 {tasks.filter((t) => t.status === 'PENDING').length}
               </span>
             </div>
@@ -235,19 +235,19 @@ export default function WorkerDashboardPage() {
       {/* Status Alert Notification */}
       {statusMessage && (
         <div
-          className={`p-4 rounded-2xl border flex items-center justify-between text-xs font-semibold ${
+          className={`p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border flex items-center justify-between text-xs sm:text-sm font-semibold ${
             statusMessage.type === 'success'
               ? 'bg-emerald-50 border-emerald-200 text-emerald-800'
               : 'bg-red-50 border-red-200 text-red-800'
           }`}
         >
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
             <span>{statusMessage.text}</span>
           </div>
           <button
             onClick={() => setStatusMessage(null)}
-            className="text-slate-400 hover:text-slate-700 cursor-pointer font-bold"
+            className="text-slate-400 hover:text-slate-700 cursor-pointer font-bold ml-2"
           >
             ✕
           </button>
@@ -256,60 +256,60 @@ export default function WorkerDashboardPage() {
 
       {/* ACTIVE CLEANING STOPWATCH & CHECKLIST CARD */}
       {activeTaskId && activeTask && (
-        <div className="bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 text-white rounded-3xl p-6 sm:p-8 shadow-2xl shadow-amber-600/30 animate-in slide-in-from-top-4 duration-300">
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-amber-400/50 pb-5">
+        <div className="bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 text-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl shadow-amber-600/30 animate-in slide-in-from-top-4 duration-300 space-y-5">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-amber-400/50 pb-4 sm:pb-5">
             <div>
-              <span className="text-xs font-black uppercase tracking-widest bg-white/20 px-3.5 py-1.5 rounded-full inline-block">
+              <span className="text-[10px] sm:text-xs font-black uppercase tracking-widest bg-white/20 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full inline-block">
                 ● Live Cleaning Shift in Progress
               </span>
-              <h2 className="text-2xl sm:text-3xl font-black mt-2.5">{activeTask.facilityName}</h2>
-              <p className="text-sm text-amber-100 mt-1 font-medium">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-black mt-2">{activeTask.facilityName}</h2>
+              <p className="text-xs sm:text-sm text-amber-100 mt-1 font-medium">
                 Target Section: <span className="font-bold underline text-white">{activeTask.targetBlock || 'Entire Complex'}</span> • Code: {activeTask.facilityCode}
               </p>
             </div>
 
-            {/* LIVE DIGITAL STOPWATCH */}
-            <div className="bg-black/50 backdrop-blur-md px-8 py-4 rounded-3xl border border-white/30 text-center shadow-2xl animate-glow">
-              <span className="block text-xs uppercase font-extrabold text-amber-200 tracking-widest mb-1">
+            {/* LIVE DIGITAL STOPWATCH - 100% Responsive */}
+            <div className="w-full sm:w-auto bg-black/55 backdrop-blur-md px-5 sm:px-8 py-3 sm:py-4 rounded-2xl sm:rounded-3xl border border-white/30 text-center shadow-2xl animate-glow">
+              <span className="block text-[10px] sm:text-xs uppercase font-extrabold text-amber-200 tracking-widest mb-0.5 sm:mb-1">
                 Live Shift Stopwatch
               </span>
-              <span className="font-mono text-5xl sm:text-6xl font-black tracking-widest text-white drop-shadow-lg">
+              <span className="font-mono text-4xl sm:text-5xl lg:text-6xl font-black tracking-wider text-white drop-shadow-lg">
                 {formatTimer(timerSeconds)}
               </span>
             </div>
           </div>
 
           {/* 5-POINT CHECKLIST */}
-          <div className="mt-6 space-y-3.5">
-            <h3 className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-amber-100 flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-amber-200" /> 5-Point Quality Verification Checklist (Tap to Verify)
+          <div className="space-y-3">
+            <h3 className="text-xs sm:text-sm lg:text-base font-extrabold uppercase tracking-wider text-amber-100 flex items-center gap-2">
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-amber-200 shrink-0" /> 5-Point Quality Verification Checklist (Tap to Verify)
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3">
               {currentChecklist.map((item, idx) => (
                 <button
                   key={idx}
                   type="button"
                   onClick={() => handleToggleChecklist(idx)}
-                  className={`p-4 rounded-2xl border flex items-center gap-3.5 text-left transition-all cursor-pointer min-h-[56px] ${
+                  className={`p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border flex items-center gap-3 text-left transition-all cursor-pointer min-h-[50px] sm:min-h-[56px] ${
                     item.completed
                       ? 'bg-white text-slate-900 border-white font-bold shadow-md'
                       : 'bg-black/25 text-amber-50 border-white/15 hover:bg-black/35 font-semibold'
                   }`}
                 >
                   {item.completed ? (
-                    <CheckSquare className="w-6 h-6 text-emerald-600 shrink-0" />
+                    <CheckSquare className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600 shrink-0" />
                   ) : (
-                    <Square className="w-6 h-6 opacity-60 shrink-0" />
+                    <Square className="w-5 h-5 sm:w-6 sm:h-6 opacity-60 shrink-0" />
                   )}
-                  <span className="text-sm sm:text-base leading-snug">{item.taskItem}</span>
+                  <span className="text-xs sm:text-sm lg:text-base leading-snug">{item.taskItem}</span>
                 </button>
               ))}
             </div>
           </div>
 
-          {/* CONSUMABLES REFILL TOGGLES */}
-          <div className="mt-6 pt-5 border-t border-amber-400/50 flex flex-wrap items-center justify-between gap-5">
-            <div className="flex flex-wrap items-center gap-5 text-sm sm:text-base">
+          {/* CONSUMABLES REFILL TOGGLES & COMPLETE BUTTON */}
+          <div className="pt-4 border-t border-amber-400/50 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5 text-xs sm:text-sm lg:text-base">
               <label className="flex items-center gap-2.5 cursor-pointer font-bold">
                 <input
                   type="checkbox"
@@ -334,9 +334,9 @@ export default function WorkerDashboardPage() {
             <button
               onClick={handleCompleteTask}
               disabled={loading}
-              className="px-8 py-4 bg-white text-amber-900 hover:bg-amber-50 active:scale-95 font-black text-base rounded-2xl shadow-xl flex items-center gap-2.5 transition-all cursor-pointer"
+              className="w-full lg:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-amber-950 hover:bg-amber-50 active:scale-95 font-black text-sm sm:text-base rounded-xl sm:rounded-2xl shadow-xl flex items-center justify-center gap-2.5 transition-all cursor-pointer disabled:opacity-50 shrink-0"
             >
-              <CheckCircle2 className="w-6 h-6 text-emerald-600" />
+              <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
               <span>Complete & Restore Center</span>
             </button>
           </div>
@@ -344,10 +344,10 @@ export default function WorkerDashboardPage() {
       )}
 
       {/* TASKS QUEUE */}
-      <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+      <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-slate-200 shadow-sm space-y-4">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-base font-bold text-slate-900">Assigned Maintenance & Cleaning Queue</h2>
+            <h2 className="text-sm sm:text-base font-bold text-slate-900">Assigned Maintenance & Cleaning Queue</h2>
             <p className="text-xs text-slate-500">
               Tasks automatically triggered by citizen QR reports or scheduled sanitation duty.
             </p>
@@ -356,8 +356,8 @@ export default function WorkerDashboardPage() {
 
         <div className="space-y-3 pt-1">
           {tasks.length === 0 ? (
-            <div className="text-center py-10 bg-slate-50 rounded-2xl border border-slate-200">
-              <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto mb-2" />
+            <div className="text-center py-8 sm:py-10 bg-slate-50 rounded-2xl border border-slate-200">
+              <CheckCircle2 className="w-9 h-9 sm:w-10 sm:h-10 text-emerald-600 mx-auto mb-2" />
               <p className="text-sm font-bold text-slate-800">No Pending Tasks</p>
               <p className="text-xs text-slate-500">All allotted toilet centers are clean and well-maintained.</p>
             </div>
@@ -365,11 +365,11 @@ export default function WorkerDashboardPage() {
             tasks.map((task) => (
               <div
                 key={task._id}
-                className="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex flex-wrap items-center justify-between gap-4 hover:border-slate-300 transition-all"
+                className="p-3.5 sm:p-4 bg-slate-50 border border-slate-200 rounded-xl sm:rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 hover:border-slate-300 transition-all"
               >
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-2.5 sm:gap-3">
                   <span
-                    className={`font-mono text-xs font-black px-2.5 py-1 rounded-lg ${
+                    className={`font-mono text-[11px] sm:text-xs font-black px-2 sm:px-2.5 py-1 rounded-lg shrink-0 ${
                       task.priority === 'URGENT'
                         ? 'bg-red-100 text-red-800'
                         : task.priority === 'HIGH'
@@ -380,30 +380,30 @@ export default function WorkerDashboardPage() {
                     {task.taskId}
                   </span>
                   <div>
-                    <h3 className="font-bold text-sm text-slate-900">{task.title}</h3>
-                    <p className="text-xs text-slate-500 mt-0.5">
+                    <h3 className="font-bold text-xs sm:text-sm text-slate-900">{task.title}</h3>
+                    <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5">
                       Complex: <span className="font-semibold text-slate-800">{task.facilityName}</span> ({task.facilityCode}) • Section: {task.targetBlock || 'Entire Center'}
                     </p>
                     {task.notes && (
-                      <p className="text-xs italic text-slate-600 mt-1">"{task.notes}"</p>
+                      <p className="text-[11px] sm:text-xs italic text-slate-600 mt-1">"{task.notes}"</p>
                     )}
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2.5 sm:gap-3 w-full sm:w-auto shrink-0">
                   {task.status === 'COMPLETED' ? (
-                    <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full flex items-center gap-1">
+                    <span className="w-full sm:w-auto justify-center px-3 py-1.5 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-xl flex items-center gap-1">
                       <CheckCircle2 className="w-3.5 h-3.5" /> Cleaned ({task.durationMinutes || 15}m)
                     </span>
                   ) : task.status === 'IN_PROGRESS' ? (
-                    <span className="px-3 py-1 bg-amber-500 text-white text-xs font-bold rounded-full animate-pulse flex items-center gap-1">
+                    <span className="w-full sm:w-auto justify-center px-3 py-1.5 bg-amber-500 text-white text-xs font-bold rounded-xl animate-pulse flex items-center gap-1">
                       <Clock className="w-3.5 h-3.5" /> Cleaning Now
                     </span>
                   ) : (
                     <button
                       onClick={() => handleStartTask(task)}
                       disabled={isTimerRunning}
-                      className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white text-xs font-bold rounded-xl flex items-center gap-1.5 shadow-md shadow-emerald-600/20 cursor-pointer transition-all"
+                      className="w-full sm:w-auto justify-center px-4 py-2 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white text-xs font-bold rounded-xl flex items-center gap-1.5 shadow-md shadow-emerald-600/20 cursor-pointer transition-all"
                     >
                       <Play className="w-3.5 h-3.5 fill-white" /> Start Cleaning
                     </button>
@@ -416,20 +416,20 @@ export default function WorkerDashboardPage() {
       </div>
 
       {/* ALLOTTED TOILET CENTERS */}
-      <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+      <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-slate-200 shadow-sm space-y-4">
         <div>
-          <h2 className="text-base font-bold text-slate-900">My Allotted Toilet Complexes</h2>
+          <h2 className="text-sm sm:text-base font-bold text-slate-900">My Allotted Toilet Complexes</h2>
           <p className="text-xs text-slate-500">
             Facilities assigned to your daily cleanliness and sanitation route.
           </p>
         </div>
 
         {(assignedFacilities.length > 0 || facilities.length > 0) ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 pt-1">
             {(assignedFacilities.length > 0 ? assignedFacilities : facilities.slice(0, 3)).map((facility) => (
               <div
                 key={facility._id}
-                className="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col justify-between"
+                className="p-3.5 sm:p-4 bg-slate-50 border border-slate-200 rounded-xl sm:rounded-2xl flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between">
